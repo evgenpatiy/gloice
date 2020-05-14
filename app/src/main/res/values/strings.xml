@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GLOICE-test</string>
+    <string name="toolbar_movies_list_title">Most popular movies from TMDB</string>
+    <string name="toolbar_movie_details_title">Movie details</string>
+    <string name="toolbar_movie_error_title">No movie here</string>
+    <string name="movie_popularity">Popularity</string>
+    <string name="movie_vote_average">Vote average</string>
+    <string name="movie_vote_count">Vote count</string>
+    <string name="movie_adult_marker">For adults only</string>
+    <string name="movie_adult_yes">YES</string>
+    <string name="movie_adult_no">NO</string>
+    <string name="movie_release_date">Release date</string>
+    <string name="movie_original_language">Original language</string>
+    <string name="movies_list_empty">No movies here</string>
+    <string name="movies_list_network_error">Network error, click here to navigate your last movie details</string>
+    <string name="movies_no_previous">No previous movie selected</string>
+    <string name="genres">Genres</string>
+</resources>

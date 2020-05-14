@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="movieViewModel"
+            type="com.gmail.evgenpatiy.gloice.ui.viewmodels.MovieViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.list.MoviesListFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movies_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="@{movieViewModel.isMoviesListEmpty || !movieViewModel.isNetworkConnected() ? View.GONE : View.VISIBLE}"
+            tools:itemCount="5"
+            tools:listitem="@layout/view_card_movie" />
+
+        <TextView
+            style="@style/GloiceMovieOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="@{movieViewModel.isNetworkConnected() ? false : true}"
+            android:focusable="@{movieViewModel.isNetworkConnected() ? false : true}"
+            android:gravity="center"
+            android:maxLines="2"
+            android:onClick="@{(view) -> movieViewModel.onNetworkFailureClick(view)}"
+            android:text="@{movieViewModel.isNetworkConnected() ? @string/movies_list_empty : @string/movies_list_network_error}"
+            android:visibility="@{movieViewModel.isMoviesListEmpty || !movieViewModel.isNetworkConnected() ? View.VISIBLE : View.GONE}"
+            tools:text="ERROR MESSAGE" />
+
+    </FrameLayout>
+</layout>

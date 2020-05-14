@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movieViewModel"
+            type="com.gmail.evgenpatiy.gloice.ui.viewmodels.MovieViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_20"
+            android:orientation="vertical"
+            tools:ignore="contentDescription">
+
+            <TextView
+                style="@style/GloiceMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{movieViewModel.movieTitle}"
+                android:textSize="22sp"
+                tools:text="MOVIE TITLE" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/GloiceMovieRelease"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/movie_release_date"
+                    tools:text="Release date" />
+
+                <TextView
+                    style="@style/GloiceMovieRelease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:movie_release_date="@{movieViewModel.movieReleaseDate}"
+                    tools:text="9999-99-99" />
+            </LinearLayout>
+
+            <View style="@style/HorizontalDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/GloiceMovieRelease"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_weight="1"
+                    android:text="@string/genres"
+                    tools:text="Genres" />
+
+                <TextView
+                    style="@style/GloiceMovieValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:maxLines="2"
+                    app:movie_genres="@{movieViewModel.movieGenresNames}"
+                    tools:text="GENRE, GENRE, GENRE, GENRE" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/GloiceDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/movie_popularity"
+                            tools:text="Popularity" />
+
+                        <TextView
+                            style="@style/GloiceMovieValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:movie_popularity="@{movieViewModel.moviePopularity}"
+                            tools:text="999.999" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/GloiceDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/movie_vote_average"
+                            tools:text="Vote average" />
+
+                        <TextView
+                            style="@style/GloiceMovieValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:movie_vote_average="@{movieViewModel.movieVoteAverage}"
+                            tools:text="999.999" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/GloiceDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/movie_vote_count"
+                            tools:text="Vote count" />
+
+                        <TextView
+                            style="@style/GloiceMovieValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:movie_vote_count="@{movieViewModel.movieVoteCount}"
+                            tools:text="999.999" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/GloiceDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/movie_adult_marker"
+                            tools:text="For adults only" />
+
+                        <TextView
+                            style="@style/GloiceMovieValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:movie_adult_marker="@{movieViewModel.movieAdultMarker}"
+                            tools:text="YES" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/GloiceDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/movie_original_language"
+                            tools:text="Original language" />
+
+                        <TextView
+                            style="@style/GloiceMovieValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:movie_original_language="@{movieViewModel.movieOriginalLanguage}"
+                            tools:text="UA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_movie_placeholder"
+                    app:movie_poster="@{movieViewModel.moviePosterPath}" />
+
+            </LinearLayout>
+
+            <View style="@style/HorizontalDivider" />
+
+            <TextView
+                style="@style/GloiceMovieOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{movieViewModel.movieOverview}"
+                tools:text="Overview" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

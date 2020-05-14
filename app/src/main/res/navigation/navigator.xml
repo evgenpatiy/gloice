@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigator"
+    app:startDestination="@id/moviesList">
+
+    <fragment
+        android:id="@+id/moviesList"
+        android:name="com.gmail.evgenpatiy.gloice.ui.fragments.list.MoviesListFragment"
+        android:label="@string/toolbar_movies_list_title"
+        tools:layout="@layout/fragment_movie_list">
+        <action
+            android:id="@+id/to_movieDetails"
+            app:destination="@id/movieDetails"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/moviesList" />
+        <action
+            android:id="@+id/to_movieError"
+            app:destination="@id/movieError"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/moviesList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetails"
+        android:name="com.gmail.evgenpatiy.gloice.ui.fragments.details.MovieDetailsFragment"
+        android:label="@string/toolbar_movie_details_title">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieError"
+        android:name="com.gmail.evgenpatiy.gloice.ui.fragments.details.NoPreviousMovieSelectedFragment"
+        android:label="@string/toolbar_movie_error_title" />
+</navigation>

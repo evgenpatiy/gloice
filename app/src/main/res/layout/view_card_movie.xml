@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.gmail.evgenpatiy.gloice.ui.fragments.list.OnMovieClickListener" />
+
+        <variable
+            name="movie"
+            type="com.gmail.evgenpatiy.gloice.data.entities.movie.Movie" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/GloiceMovieCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10"
+        android:onClick="@{(view) -> listener.onClick(view, movie.movieId)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_10">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_movie_placeholder"
+                    app:movie_poster="@{movie.moviePosterPath}"
+                    tools:ignore="contentDescription" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/GloiceMovieTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_weight="1"
+                    android:minLines="3"
+                    android:text="@{movie.movieTitle}"
+                    tools:text="Movie title" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_10">
+
+                    <TextView
+                        style="@style/GloiceDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="@string/movie_popularity"
+                        tools:text="Popularity" />
+
+                    <TextView
+                        style="@style/GloiceMovieValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        app:movie_popularity="@{movie.moviePopularity}"
+                        tools:text="999.999" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

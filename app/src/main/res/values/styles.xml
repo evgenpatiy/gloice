@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/regular</item>
+    </style>
+
+    <style name="GloiceToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:actionBarSize</item>
+    </style>
+
+    <style name="GloiceMovieCard" parent="Widget.MaterialComponents.CardView">
+        <item name="strokeColor">?android:attr/textColorSecondary</item>
+        <item name="strokeWidth">@dimen/stroke_width</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="GloiceMovieTitle">
+        <item name="fontFamily">@font/semibold</item>
+        <item name="android:textSize">@dimen/movie_title_font</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="GloiceDescription">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="GloiceMovieOverview">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">@dimen/movie_title_font</item>
+        <item name="fontFamily">@font/light</item>
+    </style>
+
+    <style name="GloiceMovieValue">
+        <item name="fontFamily">@font/semibold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="GloiceMovieRelease">
+        <item name="fontFamily">@font/light</item>
+        <item name="android:textSize">@dimen/movie_subtitle_font</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="HorizontalDivider">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/stroke_width</item>
+        <item name="android:layout_marginTop">@dimen/margin_20</item>
+        <item name="android:layout_marginBottom">@dimen/margin_20</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+</resources>
